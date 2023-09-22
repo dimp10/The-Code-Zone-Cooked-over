@@ -1,3 +1,8 @@
 tiles.set_current_tilemap(tilemap("level"))
 char = sprites.create(assets.image("Cook down"), SpriteKind.player)
 controller.move_sprite(char)
+characterAnimations.loop_frames(char, [assets.image("Cook right")], 500, characterAnimations.rule(Predicate.MOVING_RIGHT))
+characterAnimations.loop_frames(char, [assets.image("Cook up")], 500, characterAnimations.rule(Predicate.MOVING_UP))
+characterAnimations.loop_frames(char, [assets.image("Cook left")], 500, characterAnimations.rule(Predicate.MOVING_LEFT))
+characterAnimations.loop_frames(char, [assets.image("Cook down")], 500, characterAnimations.rule(Predicate.MOVING_DOWN))
+scene.camera_follow_sprite(char)

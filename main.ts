@@ -1,3 +1,8 @@
 tiles.setCurrentTilemap(tilemap`level`)
 let char = sprites.create(assets.image`Cook down`, SpriteKind.Player)
 controller.moveSprite(char)
+characterAnimations.loopFrames(char, [assets.image`Cook right`], 500, characterAnimations.rule(Predicate.MovingRight))
+characterAnimations.loopFrames(char, [assets.image`Cook up`], 500, characterAnimations.rule(Predicate.MovingUp))
+characterAnimations.loopFrames(char, [assets.image`Cook left`], 500, characterAnimations.rule(Predicate.MovingLeft))
+characterAnimations.loopFrames(char, [assets.image`Cook down`], 500, characterAnimations.rule(Predicate.MovingDown))
+scene.cameraFollowSprite(char)
